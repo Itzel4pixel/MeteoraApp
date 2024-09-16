@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="src/style.css" rel="stylesheet" />
+    <title>Meteora - Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Current Weather Information</h2>
+        <div class="weather-app-wrapper">
+            <div class="card border-info border-3">
+                <div class="card-body">
+                    <form id="city-form" class="mt-2 mb-4" onsubmit="handleSubmit(event)">
+                        <div class="row">
+                            <div class="col-9">
+                                <input
+                                    type="search"
+                                    placeholder="Enter a City"
+                                    id="enter-city-input"
+                                    class="city-input form-control"
+                                    autocomplete="off"
+                                    required
+                                />
+                            </div>
+                            <div class="col-3">
+                                <input
+                                    type="submit"
+                                    value="Search"
+                                    class="search-button btn btn-primary"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                    <h1 id="searched-city"></h1> <!-- This will display the searched city -->
+                    <h2 id="current-date"></h2> <!-- Displays current date and time -->
+                </div>
+
+                <div class="weather-info">
+                    <div class="row no-gutters">
+                        <div class="col-7">
+                            <span class="main-weather-description" id="weather-description">
+                                Weather description
+                            </span><br>
+                            <span class="humidity-stat">
+                                Humidity: <span id="humidity"></span>%
+                            </span><br>
+                            <span class="wind-stat">
+                                Wind: <span id="wind"></span> km/h
+                            </span>
+                        </div>
+                        <div class="col-md">
+                            <div class="main-temperature">
+                                <img
+                                    src="media/03d.png"
+                                    class="main-weather-img"
+                                    id="main-icon"
+                                    alt="weather image"
+                                    style="width: 60px;"
+                                />
+                                <span id="temperature" style="font-size: 2em;">0</span>
+                                <a href="#" id="celsius-link" class="units active">°C</a>
+                                <span class="unit-break"> | </span>
+                                <a href="#" id="fahrenheit-link" class="units">°F</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <p>
+                    This project was coded by
+                    <a href="https://github.com/Itzel4pixel/Meteora" target="_blank">Itzel Rodriguez Mendoza</a> and is
+                    <a href="https://meteorabitz.netlify.app/" target="_blank"> hosted on Netlify</a> and available on
+                    <a href="https://github.com/Itzel4pixel/Meteora" target="_blank"> GitHub</a>.
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="src/index.js"></script>  <!-- Path to your JavaScript file -->
+</body>
+
+</html>
